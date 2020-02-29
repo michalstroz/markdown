@@ -1,0 +1,136 @@
+.editorWrapper .text-editor, body {
+  margin: 0;
+  padding: 0;
+}
+
+.previewer .previewerImageWrapper, .previewer > .previewerUnorderedList, .previewer .previewerOrderedList, .previewer .previewerTable, .previewer .previewerBlockQuote, .previewer .previewerMultiLineCode, .previewer .previewerParagraph {
+  font-size: 1.3em;
+  margin: 1.3em 0;
+  box-sizing: border-box;
+}
+
+.previewer .inlineCode, .previewer .previewerMultiLineCode {
+  color: #ffffff;
+  background: linear-gradient(160deg, #555, #000);
+}
+
+.previewer .previewerTable td, .previewer .previewerTable th, .previewer .previewerTable {
+  border: 1px solid #000;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  font-size: 10px;
+  width: 100%;
+}
+
+.content {
+  width: 90%;
+  margin: auto;
+  padding-top: 3em;
+}
+
+.editorWrapper {
+  height: 40vh;
+  margin-bottom: 3em;
+}
+.editorWrapper .text-editor {
+  background: linear-gradient(135deg, #fdfdfd, #d9d9d9);
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  box-sizing: border-box;
+  padding: 1em;
+  box-shadow: 0 0 0.2em #9f9f9f;
+}
+
+.previewer .previewerMainHeading {
+  margin: 1.3em 0;
+  font-size: 2.9em;
+}
+.previewer .previewerSecondHeading {
+  margin: 1.3em 0;
+  font-size: 2.1em;
+}
+.previewer .previewerThirdHeading {
+  margin: 1.3em 0;
+  font-size: 1.5717em;
+}
+.previewer .previewerParagraph {
+  margin: 0.5em 0;
+}
+.previewer .previewerMultiLineCode {
+  padding: 1em;
+  overflow-x: auto;
+}
+.previewer .previewerBlockQuote {
+  padding-left: 0.5em;
+  margin-left: 2em;
+  border-left: 0.3em solid grey;
+}
+.previewer .previewerImageWrapper .previewerImage {
+  width: 100%;
+}
+.previewer .inlineCode {
+  padding: 0 0.2em;
+}
+
+@media (min-width: 500px) {
+  .container {
+    font-size: 11px;
+  }
+}
+@media (min-width: 600px) {
+  .container {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1000px) {
+  .previewer, .editorWrapper {
+    width: 50%;
+    height: 90vh;
+  }
+
+  .container {
+    font-size: 12.5px;
+  }
+
+  .content {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    -ms-flex-line-pack: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -ms-flex-align: start;
+    max-width: 100em;
+  }
+
+  .previewer {
+    overflow-y: auto;
+    padding: 0 3em;
+    box-shadow: 0 0 0.2em #9f9f9f;
+  }
+}
+@media (min-width: 1300px) {
+  .content {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

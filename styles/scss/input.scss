@@ -1,0 +1,157 @@
+@import "partials/variables", "partials/mixins";
+
+%reset-margin-padding {
+  margin: $zero-margin;
+  padding: $zero-padding;
+}
+
+%block-element {
+  font-size: $paragraph-font-size;
+  margin: $block-element-margin;
+  box-sizing: $border-box-sizing;
+}
+
+%code-style {
+  color: $code-font-color;
+  @include gradient(160deg, #555, #000);
+}
+
+%table-style {
+  border: $table-border;
+}
+
+body {
+  @extend %reset-margin-padding;
+  @include overflow(x, hidden);
+}
+.container {
+  font-size: $font-size;
+  width: $full-width;
+}
+.content {
+  width: $full-width - 10%;
+  margin: $auto-margin;
+  padding-top: $zero-padding + 3em;
+}
+.editorWrapper {
+  height: $full-screen-height - 60;
+  margin-bottom: $zero-margin + 3em;
+
+  .text-editor {
+    @extend %reset-margin-padding;
+    @include gradient(135deg, #fdfdfd, #d9d9d9);
+    width: $full-width;
+    height: $full-height;
+    resize: $not-resize;
+    border: $remove-border;
+    box-sizing: $border-box-sizing;
+    padding: $zero-padding + 1em;
+    box-shadow: $editor-shadow;
+  }
+}
+
+.previewer {
+  .previewerMainHeading {
+    margin: $block-element-margin;
+    font-size: $heading-font-size;
+  }
+  .previewerSecondHeading {
+    margin: $block-element-margin;
+    font-size: $heading-font-size - .8em;
+  }
+  .previewerThirdHeading {
+    margin: $block-element-margin;
+    font-size: $heading-font-size - 1.3283em;
+  }
+  .previewerParagraph {
+    @extend %block-element;
+    margin: $paragraph-margin;
+  }
+  .previewerMultiLineCode {
+    @extend %block-element;
+    @extend %code-style;
+    padding: $block-code-padding;
+    @include overflow(x, auto);
+  }
+  .previewerBlockQuote {
+    @extend %block-element;
+    padding-left: $block-quote-left-padding;
+    margin-left: $block-quote-side-margin;
+    border-left: $block-quote-border;
+  }
+  .previewerTable {
+    @extend %block-element;
+    @extend %table-style;
+
+    th {
+      @extend %table-style;
+    }
+
+    td {
+      @extend %table-style;
+    }
+  }
+  .previewerOrderedList {
+    @extend %block-element;
+  }
+
+  & > .previewerUnorderedList {
+    @extend %block-element;
+  }
+
+  .previewerImageWrapper {
+    @extend %block-element;
+
+    .previewerImage {
+      width: $full-width;
+    }
+  }
+
+  .inlineCode {
+    @extend %code-style;
+    padding: $inline-code-padding;
+  }
+}
+
+@media (min-width: 500px) {
+  .container {
+    font-size: $font-size + 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    font-size: $font-size + 2;
+  }
+}
+
+@media (min-width: 1000px) {
+  %set-content-children-dimensions {
+    width: $full-width - 50;
+    height: $full-screen-height - 10;
+
+  }
+
+  .container {
+    font-size: $font-size + 2.5;
+  }
+  .content {
+    @include flex-container(row, nowrap, center, flex-start, flex-start);
+    max-width: $max-content-width;
+  }
+  .editorWrapper {
+    @extend %set-content-children-dimensions;
+  }
+  .previewer {
+    @extend %set-content-children-dimensions;
+    @include overflow(y, auto);
+    padding: $zero-padding $zero-padding + 3em;
+    box-shadow: $editor-shadow;
+  }
+}
+
+@media (min-width: 1300px) {
+  .content {
+    width: $full-width;
+  }
+}
